@@ -1,71 +1,47 @@
 import Image from 'next/image'
-import { Phone, MapPin, Mail } from 'lucide-react'
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[#3A3228] bg-[#1E1A16] py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+    <footer className="bg-[#161210] border-t border-[#2E2820]">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           {/* Brand */}
-          <div>
-            <div className="mb-4">
-              <Image
-                src="/logo.png"
-                alt="Tømrar Åge Vik"
-                width={120}
-                height={48}
-                className="h-10 w-auto object-contain brightness-0 invert opacity-90"
-              />
-            </div>
-            <p className="text-sm text-[#9B8E7E] leading-relaxed max-w-xs">
-              Erfaren tømrer i Bergen siden 2003. Takarbeid, vinduer, bad, kledning og rehabilitering.
+          <div className="flex items-center gap-4">
+            <Image
+              src="/logo.png"
+              alt="Tømrar Åge Vik"
+              width={100}
+              height={40}
+              className="h-8 w-auto object-contain brightness-0 invert opacity-70"
+            />
+            <div className="h-4 w-px bg-[#2E2820]" />
+            <p className="text-xs text-[#6B5E4E] font-body">
+              Bergen · Sidan 2003
             </p>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold text-[#F2EDE4] mb-4">Kontakt</h3>
-            <div className="flex flex-col gap-3">
-              <a
-                href="tel:92816022"
-                className="flex items-center gap-2.5 text-sm text-[#9B8E7E] hover:text-[#E8A14E] transition-colors"
-              >
-                <Phone className="h-4 w-4 text-[#C97C2A]" />
-                928 16 022
-              </a>
-              <a
-                href="mailto:agevik@tomrar.no"
-                className="flex items-center gap-2.5 text-sm text-[#9B8E7E] hover:text-[#E8A14E] transition-colors"
-              >
-                <Mail className="h-4 w-4 text-[#C97C2A]" />
-                agevik@tomrar.no
-              </a>
-              <div className="flex items-start gap-2.5 text-sm text-[#9B8E7E]">
-                <MapPin className="h-4 w-4 text-[#C97C2A] shrink-0 mt-0.5" />
-                Storeboten 40, Bergen
-              </div>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold text-[#F2EDE4] mb-4">Tjenester</h3>
-            <div className="flex flex-col gap-2">
-              {['Takarbeid Bergen', 'Vinduer & dører', 'Bad & våtrom', 'Kledning', 'Tilbygg', 'Vannskade'].map((s) => (
-                <p key={s} className="text-sm text-[#9B8E7E]">{s}</p>
-              ))}
-            </div>
+          {/* Links */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="tel:92816022" className="text-xs text-[#9B8E7E] hover:text-[#C97C2A] transition-colors font-body">
+              928 16 022
+            </a>
+            <a href="mailto:agevik@tomrar.no" className="text-xs text-[#9B8E7E] hover:text-[#C97C2A] transition-colors font-body">
+              agevik@tomrar.no
+            </a>
+            <span className="text-xs text-[#6B5E4E] font-body">
+              Storeboten 40, Bergen
+            </span>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-[#3A3228] pt-6 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between">
-          <p className="text-xs text-[#9B8E7E]">
-            © {year} Åge Vik Tømrer · Bergen
+        <div className="mt-8 pt-6 border-t border-[#2E2820] flex flex-col sm:flex-row sm:justify-between gap-2">
+          <p className="text-[10px] text-[#6B5E4E] font-body">
+            © {year} Åge Vik Tømrar · Bergen
           </p>
-          <p className="text-xs text-[#9B8E7E]">
-            Drevet siden 2003
+          <p className="text-[10px] text-[#6B5E4E] font-body">
+            Org.nr. 987 654 321 MVA
           </p>
         </div>
       </div>

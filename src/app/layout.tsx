@@ -1,19 +1,20 @@
 import type { Metadata } from 'next'
-import { Fraunces, DM_Sans } from 'next/font/google'
+import { Syne, Lora } from 'next/font/google'
 import './globals.css'
 
-const dmSans = DM_Sans({
+const syne = Syne({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-display',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
 })
 
-const fraunces = Fraunces({
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-body',
   display: 'swap',
-  weight: ['400', '600', '700', '900'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -64,6 +65,7 @@ const jsonLd = {
     '@type': 'PostalAddress',
     streetAddress: 'Storeboten 40',
     addressLocality: 'Bergen',
+    postalCode: '5003',
     addressCountry: 'NO',
   },
   geo: {
@@ -92,14 +94,14 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nb" className={`${dmSans.variable} ${fraunces.variable}`}>
+    <html lang="nb" className={`${syne.variable} ${lora.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F4EFE6] text-[#211E18] font-sans antialiased">
+      <body className="bg-[#F0EAD6] text-[#161210] font-body antialiased">
         {children}
       </body>
     </html>
