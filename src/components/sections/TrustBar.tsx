@@ -1,27 +1,33 @@
-export function TrustBar() {
-  const signals = [
-    { value: '100%',    label: 'Anbefalt av alle kunder' },
-    { value: '20+',     label: 'År i bransjen' },
-    { value: 'Mester',  label: 'Mesterbrev i tømrerfaget' },
-    { value: 'Gratis',  label: 'Befaring uten forpliktelse' },
-  ]
+import { Star, Hammer, Award, CheckCircle } from 'lucide-react'
+import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 
+const signals = [
+  { icon: Star,        text: '100% anbefalt',  sub: 'Alle 7 kunder' },
+  { icon: Hammer,      text: '20+ år',          sub: 'Erfaren håndverker' },
+  { icon: Award,       text: 'Mesterbrev',      sub: 'Høyeste fagkvalifikasjon' },
+  { icon: CheckCircle, text: 'Gratis befaring', sub: 'Ingen forpliktelser' },
+]
+
+export function TrustBar() {
   return (
-    <div className="border-y border-[#D5C9B4] bg-[#E6DFC8]">
+    <section className="border-y border-[#DDD0BE] bg-[#EBE3D5] py-8">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="flex flex-wrap sm:flex-nowrap divide-x divide-[#D5C9B4]">
-          {signals.map((s) => (
-            <div key={s.value} className="flex-1 min-w-[50%] sm:min-w-0 px-5 py-5 sm:py-6 text-center">
-              <p className="font-display font-bold text-xl sm:text-2xl text-[#161210] tracking-tight">
-                {s.value}
-              </p>
-              <p className="mt-0.5 text-xs text-[#6B5E4E] font-body">
-                {s.label}
-              </p>
-            </div>
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {signals.map((signal, i) => (
+            <AnimateOnScroll key={signal.text} delay={i as 0|1|2|3|4}>
+              <div className="flex flex-col items-center gap-2 text-center">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C97C2A]/15 text-[#C97C2A]">
+                  <signal.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="font-sans text-lg font-bold tracking-tight text-[#211E18]">{signal.text}</p>
+                  <p className="text-xs text-[#6B5E4E]">{signal.sub}</p>
+                </div>
+              </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

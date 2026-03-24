@@ -1,99 +1,132 @@
 import Image from 'next/image'
-import { ExternalLink } from 'lucide-react'
+import { CheckCircle, Award, ShieldCheck, ExternalLink, Trophy } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 
-const stats = [
-  { value: '20+',  label: 'År erfaring' },
-  { value: '100%', label: 'Anbefalt' },
-  { value: '5 år', label: 'Garanti' },
+const values = [
+  { label: 'Mesterbrev i tømrerfaget', desc: 'Åge er utdannet mester – høyeste faglige kvalifikasjon i bransjen.' },
+  { label: 'Løsningsorientert', desc: 'Vi finner alltid en god løsning – uansett utfordring.' },
+  { label: 'Effektiv levering', desc: 'Jobben gjøres raskt og innenfor avtalt tid og pris.' },
+  { label: '5 års garanti på utført arbeid', desc: 'Vi stiller alltid garanti. Noe er ikke som det skal? Vi ordner det.' },
 ]
 
 export function About() {
   return (
-    <section id="om-age" className="bg-[#F0EAD6]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
-
-        {/* Left — dark stats panel */}
-        <AnimateOnScroll>
-          <div className="bg-[#161210] px-8 py-16 sm:px-12 sm:py-20 xl:px-16 flex flex-col justify-between h-full">
+    <section id="om-age" className="py-20 sm:py-24 bg-[#F4EFE6]">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+          {/* Text side */}
+          <AnimateOnScroll>
             <div>
-              <p className="text-xs font-display font-semibold uppercase tracking-widest text-[#C97C2A] mb-4">
-                Om tømraren
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#C97C2A]">
+                Om tømreren
               </p>
-              <h2
-                className="font-display font-extrabold text-[#F0EAD6] leading-tight mb-8"
-                style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
-              >
+              <h2 className="font-display text-3xl font-bold text-[#211E18] sm:text-4xl mb-4">
                 Åge Vik
               </h2>
 
-              {/* Big stats */}
-              <div className="flex flex-col gap-6 mb-10">
-                {stats.map((s) => (
-                  <div key={s.value} className="border-l-2 border-[#C97C2A] pl-5">
-                    <p
-                      className="font-display font-extrabold text-[#C97C2A] leading-none"
-                      style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
-                    >
-                      {s.value}
-                    </p>
-                    <p className="text-sm text-[#9B8E7E] font-body mt-1">{s.label}</p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C97C2A]/30 bg-[#C97C2A]/10 px-3 py-1.5 text-xs font-semibold text-[#C97C2A]">
+                  <Award className="h-3.5 w-3.5" />
+                  Mesterbrev i tømrerfaget
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#2D5A27]/30 bg-[#2D5A27]/8 px-3 py-1.5 text-xs font-semibold text-[#2D5A27]">
+                  <ShieldCheck className="h-3.5 w-3.5" />
+                  5 års garanti på utført arbeid
+                </span>
+              </div>
+
+              <p className="text-[#6B5E4E] leading-relaxed mb-4">
+                Åge har drevet for seg selv siden 2003, med oppdrag i Bergen og omegn.
+                Når du ringer, er det Åge som svarer — og Åge som gjør jobben.
+                Ingen mellomledd, ingen overraskelser.
+              </p>
+              <p className="text-[#6B5E4E] leading-relaxed mb-8">
+                Han er opptatt av én ting: at du skal være fornøyd med resultatet.
+                Ikke bare den dagen jobben er ferdig, men året etter også. Det er sånn
+                han har holdt på i over 20 år — folk ringer tilbake, og anbefaler ham til andre.
+              </p>
+
+              {/* Hyggeligste håndverker */}
+              <a
+                href="https://hyggeligste.no/2021/nominert/Age-Vik-Tomrar-Age-Vik/9176"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-4 rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 mb-8 hover:border-amber-300 hover:bg-amber-100 transition-colors"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-400/20 text-amber-600">
+                  <Trophy className="h-5 w-5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <p className="text-sm font-bold text-amber-800">Norges Hyggeligste Håndverker 2021</p>
+                    <ExternalLink className="h-3 w-3 text-amber-500 shrink-0" />
+                  </div>
+                  <p className="text-xs text-amber-700 mb-2">Nominert i kategorien Snekker / Tømrer</p>
+                  <div className="flex gap-4">
+                    <div>
+                      <p className="text-base font-bold text-amber-800">3</p>
+                      <p className="text-xs text-amber-600">nominasjoner</p>
+                    </div>
+                    <div className="w-px bg-amber-200" />
+                    <div>
+                      <p className="text-base font-bold text-amber-800">230</p>
+                      <p className="text-xs text-amber-600">stemmer</p>
+                    </div>
+                    <div className="w-px bg-amber-200" />
+                    <div>
+                      <p className="text-base font-bold text-amber-800">150.</p>
+                      <p className="text-xs text-amber-600">plass totalt</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <div className="flex flex-col gap-4">
+                {values.map((v) => (
+                  <div key={v.label} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-[#C97C2A] shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-[#211E18] text-sm">{v.label}</p>
+                      <p className="text-xs text-[#6B5E4E]">{v.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-
-              <p className="font-body text-[#9B8E7E] text-sm leading-relaxed max-w-sm">
-                Åge har drive for seg sjølv sidan 2003, med oppdrag i Bergen og omegn.
-                Når du ringjer, er det Åge som svarar — og Åge som gjer jobben.
-                Ingen mellomledd, ingen overraskingar.
-              </p>
             </div>
+          </AnimateOnScroll>
 
-            {/* Hyggeligste-award */}
-            <a
-              href="https://hyggeligste.no/2021/nominert/Age-Vik-Tomrar-Age-Vik/9176"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-10 inline-flex items-center gap-3 border border-[#C97C2A]/30 px-5 py-3.5 hover:border-[#C97C2A]/60 transition-colors self-start"
-            >
-              <div className="text-[#C97C2A]">
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
+          {/* Visual side */}
+          <AnimateOnScroll delay={1}>
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl border border-[#DDD0BE] shadow-[var(--shadow-card)]">
+                <Image
+                  src="/bilder/aage-igjen.jpg"
+                  alt="Åge Vik med firmabil – tømrer i Bergen"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
               </div>
-              <div>
-                <p className="text-xs font-display font-semibold text-[#F0EAD6]">Norges Hyggeligste Håndverker 2021</p>
-                <p className="text-[10px] text-[#9B8E7E] font-body">Nominert · 230 stemmer</p>
-              </div>
-              <ExternalLink className="h-3.5 w-3.5 text-[#9B8E7E] shrink-0 group-hover:text-[#C97C2A] transition-colors" />
-            </a>
-          </div>
-        </AnimateOnScroll>
 
-        {/* Right — full-bleed photo */}
-        <AnimateOnScroll delay={1} className="relative min-h-[400px] lg:min-h-0">
-          <Image
-            src="/bilder/aage-igjen.jpg"
-            alt="Åge Vik med firmabil – tømrer i Bergen"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-          {/* Subtle overlay with qual text */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#161210]/70 via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-            <div className="flex flex-wrap gap-2">
-              {['Mesterbrev i tømrerfaget', '5 års garanti', 'Lokalt forankra i Bergen'].map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-block bg-[#161210]/70 backdrop-blur-sm border border-[#F0EAD6]/20 text-[#F0EAD6] text-[10px] font-display font-semibold uppercase tracking-widest px-3 py-1.5"
-                >
-                  {tag}
-                </span>
-              ))}
+              <div className="absolute -bottom-6 -right-4 sm:-right-6 rounded-xl border border-[#DDD0BE] bg-white shadow-[var(--shadow-hover)] p-4 grid grid-cols-3 gap-x-5 gap-y-2">
+                <div className="text-center">
+                  <p className="font-display text-2xl font-bold text-[#C97C2A]">20+</p>
+                  <p className="text-xs text-[#6B5E4E]">År erfaring</p>
+                </div>
+                <div className="text-center">
+                  <p className="font-display text-2xl font-bold text-[#C97C2A]">100%</p>
+                  <p className="text-xs text-[#6B5E4E]">Anbefalt</p>
+                </div>
+                <div className="text-center">
+                  <p className="font-display text-xl font-bold text-[#C97C2A]">Mester</p>
+                  <p className="text-xs text-[#6B5E4E]">Fagbrev</p>
+                </div>
+              </div>
+
+              <div className="absolute -inset-4 rounded-3xl bg-[#C97C2A]/5 blur-xl -z-10" />
             </div>
-          </div>
-        </AnimateOnScroll>
+          </AnimateOnScroll>
+        </div>
       </div>
     </section>
   )
