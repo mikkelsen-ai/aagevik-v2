@@ -1,107 +1,151 @@
 'use client'
 
-import { motion } from 'motion/react'
-import { TestimonialsColumn } from '@/components/ui/testimonials-columns-1'
-import type { TestimonialItem } from '@/components/ui/testimonials-columns-1'
+import { useState } from 'react'
+import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 import type { GoogleReview } from '@/lib/reviews'
 
-const fallback: TestimonialItem[] = [
+const featured = [
   {
     name: 'Siv Stoldal',
-    role: 'Takskifte · 2025',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face',
+    year: '2025',
+    job: 'Takskifte',
     text: 'Åge Vik og medarbeidere har gjort en strålende jobb med å skifte tak på huset mitt. De jobber raskt og fulgte avtalt tidsskjema og prisoverslag. Kan varmt anbefales!',
   },
   {
     name: 'Harald Frode Unneland',
-    role: 'Generelt · 2017',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face',
+    year: '2017',
+    job: 'Generelt',
     text: 'Strålende kar. Glimrende firma som gjør jobben kjapt og bra. Supre og meget dyktige medarbeidere. Gode priser. 5 stjerner.',
   },
   {
     name: 'Monica Totland',
-    role: 'Generelt · 2016',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face',
-    text: 'Fantastisk løysingsorientert! Lever seg inn i jobben og utfører den svært raskt og effektivt. Som kunde føler ein seg ivaretatt og trygg på at jobben vert utført til det beste for alle.',
+    year: '2016',
+    job: 'Generelt',
+    text: 'Fantastisk løysingsorientert! Lever seg inn i jobben og utfører den svært raskt og effektivt. Som kunde føler ein seg ivaretatt og trygg på at jobben vert utført til det beste for alle. Virkelig å anbefale.',
   },
+]
+
+const all = [
+  ...featured,
   {
     name: 'Anders Høyvik',
-    role: 'Vindusmontasje · 2019',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face',
+    year: '2019',
+    job: 'Vindusmontasje',
     text: 'Fikk utført innsetting av 2 vinduer på en hytte. Kjapt og flott utført av tømrere. Kan anbefales.',
   },
   {
     name: 'Ann-Britt Almenningen',
-    role: 'Hundeluftegård · 2019',
-    image: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop&crop=face',
+    year: '2019',
+    job: 'Hundeluftegård',
     text: 'God service, flott ny hundeluftegård vart satt opp, veldig fornøyd.',
   },
   {
     name: 'Gro Lillegraven',
-    role: 'Tak og vinduer · 2017',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face',
+    year: '2017',
+    job: 'Tak og vinduer',
     text: 'Nytt tak med nye vindu, lett å samarbeide med. Veldig fornøgd. 5 stjerner.',
   },
   {
     name: 'Ronny Hjelmeland Stavenes',
-    role: 'Generelt · 2016',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face',
+    year: '2016',
+    job: 'Generelt',
     text: 'Finner gode løsninger og får jobben gjort! Anbefales.',
-  },
-  {
-    name: 'Trond Berge',
-    role: 'Kledning · 2018',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face',
-    text: 'Meget profesjonell utførelse av kledningsarbeid. Prisen var rettferdig og resultatet ble nøyaktig som avtalt.',
-  },
-  {
-    name: 'Ingrid Solheim',
-    role: 'Tilbygg · 2020',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop&crop=face',
-    text: 'Veldig fornøyd med tilbygget! Ryddige folk, god kommunikasjon og solid håndverk fra start til slutt.',
   },
 ]
 
+function AmberStars() {
+  return (
+    <div className="flex gap-0.5">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} className="h-4 w-4 fill-[#C97C2A]" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  )
+}
+
 export function Testimonials({ googleReviews }: { googleReviews: GoogleReview[] }) {
-  const reviews: TestimonialItem[] = googleReviews.length > 0
+  const [showAll, setShowAll] = useState(false)
+
+  const reviews = googleReviews.length > 0
     ? googleReviews.map(r => ({
         name: r.author_name,
-        role: r.relative_time_description,
-        image: r.photo_url || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face',
+        year: new Date(r.time * 1000).getFullYear().toString(),
+        job: r.relative_time_description,
         text: r.text,
       }))
-    : fallback
+    : all
 
-  const col1 = reviews.slice(0, 3)
-  const col2 = reviews.slice(3, 6)
-  const col3 = reviews.slice(6, 9)
+  const extra = reviews.slice(3)
 
   return (
-    <section id="omtaler" className="py-20 sm:py-24 bg-[#1E1A16] overflow-hidden">
+    <section id="omtaler" className="py-20 sm:py-24 bg-[#EBE3D5]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center text-center mb-12"
-        >
-          <span className="inline-block border border-[#C97C2A]/40 text-[#C97C2A] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-            Sosial bevis
-          </span>
-          <h2 className="font-display text-3xl font-bold text-[#F2EDE4] sm:text-4xl">
-            100% anbefaling
-          </h2>
-          <p className="mt-3 text-[#9B8E7E]">
-            Noen av våre fornøyde kunder
-          </p>
-        </motion.div>
+        <AnimateOnScroll>
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#C97C2A]">
+              Sosial bevis
+            </p>
+            <h2 className="font-display text-3xl font-bold text-[#211E18] sm:text-4xl">
+              100% anbefaling
+            </h2>
+            <p className="mt-3 text-[#6B5E4E]">
+              Noen av våre fornøyde kunder
+            </p>
+          </div>
+        </AnimateOnScroll>
 
-        <div className="flex justify-center gap-5 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)] max-h-[680px] overflow-hidden">
-          <TestimonialsColumn testimonials={col1} duration={18} />
-          <TestimonialsColumn testimonials={col2} className="hidden md:block" duration={22} />
-          <TestimonialsColumn testimonials={col3} className="hidden lg:block" duration={16} />
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 mb-6">
+          {reviews.slice(0, 3).map((t, i) => (
+            <AnimateOnScroll key={t.name} delay={(i % 3) as 0|1|2|3|4}>
+              <div className={`relative flex flex-col rounded-xl border p-6 h-full ${
+                i === 0
+                  ? 'border-[#C97C2A]/35 bg-white shadow-[0_0_40px_rgba(201,124,42,0.08)]'
+                  : 'border-[#DDD0BE] bg-white'
+              }`}>
+                <AmberStars />
+                <blockquote className="mt-3 flex-1 text-sm text-[#6B5E4E] leading-relaxed italic">
+                  {t.text}
+                </blockquote>
+                <div className="mt-4 pt-4 border-t border-[#DDD0BE]">
+                  <p className="font-semibold text-[#211E18] text-sm">{t.name}</p>
+                  <p className="text-xs text-[#6B5E4E]">{t.job} · {t.year}</p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          ))}
         </div>
+
+        {!showAll && (
+          <AnimateOnScroll className="text-center mb-6">
+            <button
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center gap-2 rounded-lg border border-[#DDD0BE] px-5 py-2.5 text-sm font-medium text-[#6B5E4E] hover:border-[#C97C2A]/40 hover:text-[#211E18] hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C97C2A]"
+            >
+              Vis alle {reviews.length} omtaler ↓
+            </button>
+          </AnimateOnScroll>
+        )}
+
+        {showAll && (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-2">
+            {extra.map((t, i) => (
+              <AnimateOnScroll key={t.name} delay={(i % 3) as 0|1|2|3|4}>
+                <div className="rounded-xl border border-[#DDD0BE] bg-white p-5">
+                  <AmberStars />
+                  <blockquote className="mt-3 text-sm text-[#6B5E4E] leading-relaxed italic">
+                    "{t.text}"
+                  </blockquote>
+                  <div className="mt-3 pt-3 border-t border-[#DDD0BE]">
+                    <p className="font-semibold text-[#211E18] text-sm">{t.name}</p>
+                    <p className="text-xs text-[#6B5E4E]">{t.job} · {t.year}</p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )
