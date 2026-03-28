@@ -3,10 +3,10 @@ import { CheckCircle, Award, ShieldCheck, ExternalLink, Trophy } from 'lucide-re
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 
 const values = [
-  { label: 'Mesterbrev, sentralgodkjenning og våtromssertifikat', desc: 'Full faglig kvalifikasjon – du er i trygge hender.' },
-  { label: 'Kvalitetskontroll på alle oppdrag', desc: 'Åge bruker kvalitetskontrollsystem og sender bilder til deg når jobben er ferdig.' },
-  { label: 'Svært allsidig – over 44 år i faget', desc: 'Tak, bad, vinduer, kledning, tilbygg og mye mer. Jobbet selvstendig siden 07.07.07.' },
-  { label: '5 års garanti på utført arbeid', desc: 'Vi stiller alltid garanti. Noe er ikke som det skal? Vi ordner det.' },
+  { label: 'Svennebrev, sentralgodkjenning og våtromssertifikat' },
+  { label: 'Kvalitetskontroll på alle oppdrag' },
+  { label: 'Svært allsidig – over 44 år i faget' },
+  { label: '5 års garanti på utført arbeid' },
 ]
 
 export function About() {
@@ -27,7 +27,7 @@ export function About() {
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C97C2A]/30 bg-[#C97C2A]/10 px-3 py-1.5 text-xs font-semibold text-[#C97C2A]">
                   <Award className="h-3.5 w-3.5" />
-                  Mesterbrev
+                  Svennebrev
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C97C2A]/30 bg-[#C97C2A]/10 px-3 py-1.5 text-xs font-semibold text-[#C97C2A]">
                   <ShieldCheck className="h-3.5 w-3.5" />
@@ -40,14 +40,13 @@ export function About() {
               </div>
 
               <p className="text-[#6B5E4E] leading-relaxed mb-4">
-                Åge har jobbet som tømrer i 44 år og drevet for seg selv siden 07.07.07.
-                Når du ringer, er det Åge som svarer — og Åge som gjør jobben.
-                Ingen mellomledd, ingen overraskelser.
+                Åge Vik har lagt ned 44 år i tømrerfaget. I 2007 startet han for seg selv — og siden da har han gjort jobben selv, snakket med kundene selv og stått inne for resultatet selv. Det betyr at du vet hvem du har å gjøre med fra første samtale til siste spiker.
+              </p>
+              <p className="text-[#6B5E4E] leading-relaxed mb-4">
+                Åge er svært allsidig. Tak, bad, vinduer, kledning, tilbygg og mye mer. Sentralgodkjent, med svennebrev og våtromssertifikat. Han bruker et kvalitetskontrollsystem og sender deg bilder når jobben er ferdig, så du har full oversikt.
               </p>
               <p className="text-[#6B5E4E] leading-relaxed mb-8">
-                Han er opptatt av én ting: at du skal være fornøyd med resultatet.
-                Ikke bare den dagen jobben er ferdig, men året etter også. Det er sånn
-                han har holdt på i 44 år — folk ringer tilbake, og anbefaler ham til andre.
+                For Åge er det bare én ting som teller: at du er fornøyd. Ikke bare den uken han er hos deg, men lenge etter. Det er det som har gitt ham kunder som ringer tilbake og anbefaler ham videre.
               </p>
 
               {/* Hyggeligste håndverker */}
@@ -91,7 +90,6 @@ export function About() {
                     <CheckCircle className="h-5 w-5 text-[#C97C2A] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-[#211E18] text-sm">{v.label}</p>
-                      <p className="text-xs text-[#6B5E4E]">{v.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -122,7 +120,7 @@ export function About() {
                   <p className="text-xs text-[#6B5E4E]">Anbefalt</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-display text-xl font-bold text-[#C97C2A]">Mester</p>
+                  <p className="font-display text-xl font-bold text-[#C97C2A]">Sentralgodkjent</p>
                   <p className="text-xs text-[#6B5E4E]">Fagbrev</p>
                 </div>
               </div>
