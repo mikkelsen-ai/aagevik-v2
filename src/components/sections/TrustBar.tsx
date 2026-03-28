@@ -2,7 +2,7 @@ import { Star, Hammer, Award, CheckCircle } from 'lucide-react'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 
 const signals = [
-  { icon: Star,        text: '100% anbefalt',  sub: 'Alle 7 kunder' },
+  { icon: Star,        text: '100% anbefalt',  sub: 'Stått inne for resultatene selv' },
   { icon: Hammer,      text: '44 år',            sub: 'Erfaren håndverker' },
   { icon: Award,       text: 'Sentralgodkjent',  sub: 'Svennebrev · Våtromssertifikat' },
   { icon: CheckCircle, text: 'Gratis befaring', sub: 'Ingen forpliktelser' },
