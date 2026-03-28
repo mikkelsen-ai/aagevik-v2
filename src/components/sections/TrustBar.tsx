@@ -3,7 +3,7 @@ import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 
 const signals = [
   { icon: Star,        text: '100% anbefalt',  sub: 'Stått inne for resultatene selv' },
-  { icon: Hammer,      text: '44 år',            sub: 'Erfaren håndverker' },
+  { icon: Hammer,      text: 'Siden 1982',        sub: 'Erfaren håndverker' },
   { icon: Award,       text: 'Sentralgodkjent',  sub: 'Svennebrev · Våtromssertifikat' },
   { icon: CheckCircle, text: 'Gratis befaring', sub: 'Ingen forpliktelser' },
 ]

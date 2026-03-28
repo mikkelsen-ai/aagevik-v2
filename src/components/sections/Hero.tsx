@@ -55,7 +55,7 @@ export function Hero() {
             className="mt-5 text-lg text-white/70 sm:text-xl leading-relaxed"
             style={{ animation: 'fadeUp 0.5s ease 0.2s forwards', opacity: 0 }}
           >
-            Erfaren tømrer i Bergen · 44 år · Sentralgodkjent
+            Erfaren tømrer i Bergen · siden 1982 · Sentralgodkjent
           </p>
 
           {/* CTAs */}

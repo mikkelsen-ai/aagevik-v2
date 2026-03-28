@@ -19,7 +19,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: 'Tømrar Bergen – Åge Vik | 20+ års erfaring',
   description:
-    'Erfaren tømrer i Bergen siden 2003. Tak, vinduer, bad, kledning og rehabilitering. 100% anbefalt av alle kunder. Ring 928 16 022 – gratis befaring.',
+    'Erfaren tømrer i Bergen siden 1982. Tak, vinduer, bad, kledning og rehabilitering. 100% anbefalt av alle kunder. Ring 928 16 022 – gratis befaring.',
   keywords: [
     'tømrer bergen',
     'takarbeid bergen',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Åge Vik Tømrer',
     title: 'Tømrar Bergen – Åge Vik | 20+ års erfaring',
     description:
-      'Erfaren tømrer i Bergen siden 2003. 100% anbefalt av alle kunder. Ring 928 16 022 for gratis befaring.',
+      'Erfaren tømrer i Bergen siden 1982. 100% anbefalt av alle kunder. Ring 928 16 022 for gratis befaring.',
     images: [
       {
         url: '/bilder/480938558_1155680902930196_5186019735562947220_n.jpg',
@@ -56,7 +56,7 @@ const jsonLd = {
   '@id': 'https://agevik.no',
   name: 'Åge Vik Tømrer',
   description:
-    'Erfaren tømrer i Bergen siden 2003. Takarbeid, vinduer, bad, kledning og rehabilitering.',
+    'Erfaren tømrer i Bergen siden 1982. Takarbeid, vinduer, bad, kledning og rehabilitering.',
   url: 'https://agevik.no',
   telephone: '+4792816022',
   email: 'agevik@tomrar.no',

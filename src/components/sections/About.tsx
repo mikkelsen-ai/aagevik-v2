@@ -5,7 +5,7 @@ import { AnimateOnScroll } from '@/components/AnimateOnScroll'
 const values = [
   { label: 'Svennebrev, sentralgodkjenning og våtromssertifikat' },
   { label: 'Kvalitetskontroll på alle oppdrag' },
-  { label: 'Svært allsidig – over 44 år i faget' },
+  { label: 'Svært allsidig – tømrer siden 1982' },
   { label: '5 års garanti på utført arbeid' },
 ]
 
@@ -110,18 +110,14 @@ export function About() {
                 />
               </div>
 
-              <div className="absolute -bottom-6 -right-4 sm:-right-6 rounded-xl border border-[#DDD0BE] bg-white shadow-[var(--shadow-hover)] p-4 grid grid-cols-3 gap-x-5 gap-y-2">
+              <div className="absolute -bottom-6 -right-4 sm:-right-6 rounded-xl border border-[#DDD0BE] bg-white shadow-[var(--shadow-hover)] p-4 grid grid-cols-2 gap-x-6 gap-y-2">
                 <div className="text-center">
-                  <p className="font-display text-2xl font-bold text-[#C97C2A]">44</p>
-                  <p className="text-xs text-[#6B5E4E]">År erfaring</p>
+                  <p className="font-display text-2xl font-bold text-[#C97C2A]">1982</p>
+                  <p className="text-xs text-[#6B5E4E]">Tømrer siden</p>
                 </div>
                 <div className="text-center">
                   <p className="font-display text-2xl font-bold text-[#C97C2A]">100%</p>
                   <p className="text-xs text-[#6B5E4E]">Anbefalt</p>
-                </div>
-                <div className="text-center">
-                  <p className="font-display text-xl font-bold text-[#C97C2A]">Gratis</p>
-                  <p className="text-xs text-[#6B5E4E]">Ingen forpliktelse</p>
                 </div>
               </div>
 

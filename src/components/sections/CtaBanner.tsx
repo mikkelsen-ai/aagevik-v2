@@ -43,7 +43,7 @@ export function CtaBanner() {
           </div>
 
           <p className="mt-4 text-sm text-[#8fa98f]">
-            100% anbefalt av alle kunder · Lokalt i Bergen siden 2003
+            100% anbefalt av alle kunder · Lokalt i Bergen siden 1982
           </p>
         </AnimateOnScroll>
       </div>

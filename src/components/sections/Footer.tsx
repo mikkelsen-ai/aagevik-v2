@@ -20,7 +20,7 @@ export function Footer() {
               />
             </div>
             <p className="text-sm text-[#9B8E7E] leading-relaxed max-w-xs">
-              Erfaren tømrer i Bergen siden 2003. Takarbeid, vinduer, bad, kledning og rehabilitering.
+              Erfaren tømrer i Bergen siden 1982. Takarbeid, vinduer, bad, kledning og rehabilitering.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export function Footer() {
             © {year} Åge Vik Tømrer · Bergen
           </p>
           <p className="text-xs text-[#9B8E7E]">
-            Drevet siden 2003
+            Drevet siden 1982
           </p>
         </div>
       </div>
