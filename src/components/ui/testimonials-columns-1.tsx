@@ -48,13 +48,6 @@ export const TestimonialsColumn = (props: {
                 <AmberStars />
                 <p className="text-sm text-[#C8B99A] leading-relaxed italic">"{text}"</p>
                 <div className="flex items-center gap-3 mt-4 pt-4 border-t border-[#3A3228]">
-                  <img
-                    width={40}
-                    height={40}
-                    src={image}
-                    alt={name}
-                    className="h-10 w-10 rounded-full object-cover"
-                  />
                   <div className="flex flex-col">
                     <div className="font-semibold text-sm text-[#F2EDE4]">{name}</div>
                     <div className="text-xs text-[#9B8E7E]">{role}</div>

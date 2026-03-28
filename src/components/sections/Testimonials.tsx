@@ -93,7 +93,7 @@ export function Testimonials({ googleReviews }: { googleReviews: GoogleReview[] 
             100% anbefaling
           </h2>
           <p className="mt-3 text-[#9B8E7E]">
-            {reviews.length} fornøyde kunder · Dokumentert kvalitet
+            Noen av våre fornøyde kunder
           </p>
         </motion.div>
 
