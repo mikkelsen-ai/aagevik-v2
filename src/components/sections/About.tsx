@@ -40,7 +40,7 @@ export function About() {
               </div>
 
               <p className="text-[#6B5E4E] leading-relaxed mb-4">
-                Åge Vik har lagt ned 44 år i tømrerfaget. I 2007 startet han for seg selv — og siden da har han gjort jobben selv, snakket med kundene selv og stått inne for resultatet selv. Det betyr at du vet hvem du har å gjøre med fra første samtale til siste spiker.
+                Åge Vik har lagt ned 44 år i tømrerfaget. I 2007 startet han for seg selv — og siden da har Åge vært ansiktet utad, snakket direkte med kundene og stått personlig inne for resultatet. Det betyr at du vet hvem du har å gjøre med fra første samtale til siste spiker.
               </p>
               <p className="text-[#6B5E4E] leading-relaxed mb-4">
                 Åge er svært allsidig. Tak, bad, vinduer, kledning, tilbygg og mye mer. Sentralgodkjent, med svennebrev og våtromssertifikat. Han bruker et kvalitetskontrollsystem og sender deg bilder når jobben er ferdig, så du har full oversikt.
