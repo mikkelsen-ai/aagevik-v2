@@ -10,8 +10,11 @@ import { About } from '@/components/sections/About'
 import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
 import { StickyMobileCta } from '@/components/sections/StickyMobileCta'
+import { getGoogleReviews } from '@/lib/reviews'
 
-export default function Home() {
+export default async function Home() {
+  const googleReviews = await getGoogleReviews()
+
   return (
     <>
       <Navbar />
@@ -22,7 +25,7 @@ export default function Home() {
         <HowItWorks />
         <Services />
         <Gallery />
-        <Testimonials />
+        <Testimonials googleReviews={googleReviews} />
         <About />
         <Contact />
       </main>

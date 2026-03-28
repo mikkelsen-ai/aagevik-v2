@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { AnimateOnScroll } from '@/components/AnimateOnScroll'
+import type { GoogleReview } from '@/lib/reviews'
 
 const featured = [
   {
@@ -64,9 +65,19 @@ function AmberStars() {
   )
 }
 
-export function Testimonials() {
+export function Testimonials({ googleReviews }: { googleReviews: GoogleReview[] }) {
   const [showAll, setShowAll] = useState(false)
-  const extra = all.slice(3)
+
+  const reviews = googleReviews.length > 0
+    ? googleReviews.map(r => ({
+        name: r.author_name,
+        year: new Date(r.time * 1000).getFullYear().toString(),
+        job: r.relative_time_description,
+        text: r.text,
+      }))
+    : all
+
+  const extra = reviews.slice(3)
 
   return (
     <section id="omtaler" className="py-20 sm:py-24 bg-[#EBE3D5]">
@@ -86,7 +97,7 @@ export function Testimonials() {
         </AnimateOnScroll>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 mb-6">
-          {featured.map((t, i) => (
+          {reviews.slice(0, 3).map((t, i) => (
             <AnimateOnScroll key={t.name} delay={(i % 3) as 0|1|2|3|4}>
               <div className={`relative flex flex-col rounded-xl border p-6 h-full ${
                 i === 0
@@ -112,7 +123,7 @@ export function Testimonials() {
               onClick={() => setShowAll(true)}
               className="inline-flex items-center gap-2 rounded-lg border border-[#DDD0BE] px-5 py-2.5 text-sm font-medium text-[#6B5E4E] hover:border-[#C97C2A]/40 hover:text-[#211E18] hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C97C2A]"
             >
-              Vis alle 7 omtaler ↓
+              Vis alle {reviews.length} omtaler ↓
             </button>
           </AnimateOnScroll>
         )}
