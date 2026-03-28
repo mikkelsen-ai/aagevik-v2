@@ -21,14 +21,15 @@ export function Contact() {
 
     const form = e.currentTarget
     const data = {
-      name:        (form.elements.namedItem('name') as HTMLInputElement).value,
-      phone:       (form.elements.namedItem('phone') as HTMLInputElement).value,
-      service,
-      description: (form.elements.namedItem('description') as HTMLTextAreaElement).value,
+      bedrift_id:  'aagevik',
+      navn:        (form.elements.namedItem('name') as HTMLInputElement).value,
+      telefon:     (form.elements.namedItem('phone') as HTMLInputElement).value,
+      tjeneste:    service,
+      melding:     (form.elements.namedItem('description') as HTMLTextAreaElement).value,
     }
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://n8n.srv1537030.hstgr.cloud/webhook/nettside-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
