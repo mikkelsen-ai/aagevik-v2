@@ -120,8 +120,8 @@ export function About() {
                   <p className="text-xs text-[#6B5E4E]">Anbefalt</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-display text-xl font-bold text-[#C97C2A]">Sentralgodkjent</p>
-                  <p className="text-xs text-[#6B5E4E]">Fagbrev</p>
+                  <p className="font-display text-xl font-bold text-[#C97C2A]">Gratis</p>
+                  <p className="text-xs text-[#6B5E4E]">Ingen forpliktelse</p>
                 </div>
               </div>
 
