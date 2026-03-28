@@ -4,6 +4,7 @@ export type GoogleReview = {
   text: string
   time: number
   relative_time_description: string
+  photo_url: string
 }
 
 export async function getGoogleReviews(): Promise<GoogleReview[]> {
@@ -26,7 +27,7 @@ export async function getGoogleReviews(): Promise<GoogleReview[]> {
     const data = await res.json()
 
     return (data.reviews ?? []).map((r: {
-      authorAttribution: { displayName: string }
+      authorAttribution: { displayName: string; photoUri?: string }
       rating: number
       text: { text: string }
       publishTime: string
@@ -37,6 +38,7 @@ export async function getGoogleReviews(): Promise<GoogleReview[]> {
       text: r.text.text,
       time: Math.floor(new Date(r.publishTime).getTime() / 1000),
       relative_time_description: r.relativePublishTimeDescription,
+      photo_url: r.authorAttribution.photoUri ?? '',
     }))
   } catch {
     return []
