@@ -44,10 +44,16 @@ function BeferingForm() {
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
     }
     try {
-      await fetch('/api/contact', {
+      await fetch('https://n8n.srv1537030.hstgr.cloud/webhook/nettside-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, service: 'Gratis befaring' }),
+        body: JSON.stringify({
+          bedrift_id: 'aagevik',
+          navn:       data.name,
+          telefon:    data.phone,
+          tjeneste:   'Gratis befaring',
+          melding:    '',
+        }),
       })
     } catch {}
     setLoading(false)
