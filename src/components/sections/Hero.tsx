@@ -10,21 +10,9 @@ export function Hero() {
           backgroundImage: 'url(/bilder/Bedre.webp)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'right top',
+          backgroundPosition: 'center 15%',
         }}
       >
-        <style>{`
-          @media (max-width: 639px) {
-            .hero-bg-inner {
-              background-position: 78% 5% !important;
-            }
-          }
-          @media (min-width: 640px) {
-            .hero-bg-inner {
-              background-position: right top !important;
-            }
-          }
-        `}</style>
         {/* Warm dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE6] via-[#1E1A16]/55 to-transparent" />
