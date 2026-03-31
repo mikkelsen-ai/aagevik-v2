@@ -11,7 +11,7 @@ export function Hero() {
           alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
           fill
           priority
-          className="object-cover object-[75%_15%] sm:object-[80%_10%]"
+          className="object-cover object-[75%_5%] sm:object-[80%_10%]"
           sizes="100vw"
           style={{ transform: 'none' }}
         />
