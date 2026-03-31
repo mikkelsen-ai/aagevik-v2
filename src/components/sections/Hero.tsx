@@ -11,9 +11,9 @@ export function Hero() {
           alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
           fill
           priority
-          className="object-cover hero-img"
+          className="object-cover"
           sizes="100vw"
-          style={{ transform: 'none' }}
+          style={{ objectPosition: '85% 0%', transform: 'none' }}
         />
         {/* Warm dark overlay — charcoal-green, not cold blue */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
