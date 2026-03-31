@@ -7,7 +7,7 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bilder/Åge hovedbildet.jpeg"
+          src="/bilder/aage-hovedbilde.jpeg"
           alt="Åge Vik – tømrer i Bergen"
           fill
           priority
