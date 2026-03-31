@@ -5,14 +5,25 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
+        {/* Mobil: beskjært bilde med Åge sentrert */}
         <Image
           src="/bilder/aage-beskjaert.jpg"
           alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
           fill
           priority
-          className="object-cover"
+          className="object-cover sm:hidden"
           sizes="100vw"
-          style={{ objectPosition: 'center 20%' }}
+          style={{ objectPosition: 'center 15%' }}
+        />
+        {/* Desktop: originalbilde */}
+        <Image
+          src="/bilder/Bedre.png"
+          alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
+          fill
+          priority
+          className="object-cover hidden sm:block"
+          sizes="100vw"
+          style={{ objectPosition: 'center top' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE6] via-[#1E1A16]/55 to-transparent" />
