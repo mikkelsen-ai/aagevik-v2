@@ -11,7 +11,7 @@ export function Hero() {
           alt="Åge Vik – tømrer i Bergen"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[70%_20%] sm:object-center"
           sizes="100vw"
           style={{ transform: 'none' }}
         />
