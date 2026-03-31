@@ -10,7 +10,7 @@ export function Hero() {
           backgroundImage: 'url(/bilder/Bedre.webp)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center 15%',
+          backgroundPosition: 'center 5%',
         }}
       >
         {/* Warm dark overlay */}
