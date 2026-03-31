@@ -25,7 +25,10 @@ export function Hero() {
           sizes="100vw"
           style={{ objectPosition: 'center top' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
+        {/* Desktop gradient: mørk fra venstre */}
+        <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
+        {/* Mobil gradient: lettere overlay så Åge er synlig */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#1E1A16]/20 via-[#1E1A16]/55 to-[#1E1A16]/85" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE6] via-[#1E1A16]/55 to-transparent" />
       </div>
 
