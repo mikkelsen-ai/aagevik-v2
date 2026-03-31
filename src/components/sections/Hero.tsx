@@ -7,7 +7,7 @@ export function Hero() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/bilder/Bedre.webp)',
+          backgroundImage: 'url(/bilder/Bedre.webp?v=3)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center top',
