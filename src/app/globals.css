@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero-img {
+  object-position: 75% 10%;
+}
+@media (min-width: 640px) {
+  .hero-img {
+    object-position: 80% 10%;
+  }
+}
+
 @layer base {
   :root {
     /* Warm parchment background */
