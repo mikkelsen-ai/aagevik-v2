@@ -1,22 +1,19 @@
+import Image from 'next/image'
 import { Phone, ArrowRight } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100dvh' }}>
-      {/* Background image via CSS – full control over position on mobile */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/bilder/Bedre.webp?v=4)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center top',
-          backgroundAttachment: 'scroll',
-          willChange: 'transform',
-          transform: 'translateZ(0)',
-        }}
-      >
-        {/* Warm dark overlay */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/bilder/Bedre.webp"
+          alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+          style={{ objectPosition: 'center top' }}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE6] via-[#1E1A16]/55 to-transparent" />
       </div>
@@ -32,18 +29,14 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="max-w-xl">
-          {/* H1 */}
           <h1
             className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.08]"
             style={{ animation: 'fadeUp 0.5s ease 0.1s forwards', opacity: 0 }}
           >
             Kvalitet fra{' '}
-            <span className="text-[#E8A14E]">
-              begynnelse til slutt
-            </span>
+            <span className="text-[#E8A14E]">begynnelse til slutt</span>
           </h1>
 
-          {/* Subheading */}
           <p
             className="mt-5 text-lg text-white/70 sm:text-xl leading-relaxed"
             style={{ animation: 'fadeUp 0.5s ease 0.2s forwards', opacity: 0 }}
@@ -51,7 +44,6 @@ export function Hero() {
             Erfaren tømrer i Bergen · siden 1982 · Sentralgodkjent
           </p>
 
-          {/* CTAs */}
           <div
             className="mt-8 flex flex-col gap-3 sm:flex-row"
             style={{ animation: 'fadeUp 0.5s ease 0.3s forwards', opacity: 0 }}
@@ -72,7 +64,6 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Micro-copy */}
           <p
             className="mt-4 text-sm text-white/45"
             style={{ animation: 'fadeUp 0.5s ease 0.4s forwards', opacity: 0 }}
@@ -80,7 +71,6 @@ export function Hero() {
             Svarer innen 24 timer · Ingen forpliktelser
           </p>
 
-          {/* Badge */}
           <div
             className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-[#C97C2A]/50 bg-[#C97C2A]/20 px-4 py-1.5 text-sm font-medium text-[#F2EDE4] backdrop-blur-sm"
             style={{ animation: 'fadeUp 0.5s ease 0.5s forwards', opacity: 0 }}
