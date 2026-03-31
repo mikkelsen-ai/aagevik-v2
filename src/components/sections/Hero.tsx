@@ -3,16 +3,17 @@ import { Phone, ArrowRight } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ WebkitTransform: 'translateZ(0)' }}>
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bilder/aage-hoved.jpg"
-          alt="Åge Vik – tømrer i Bergen, med hammer og fjordutsikt"
+          src="/bilder/Åge hovedbildet.jpeg"
+          alt="Åge Vik – tømrer i Bergen"
           fill
           priority
-          className="object-cover object-right-top"
+          className="object-cover object-center"
           sizes="100vw"
+          style={{ transform: 'none' }}
         />
         {/* Warm dark overlay — charcoal-green, not cold blue */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
@@ -30,15 +31,6 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
         <div className="max-w-xl">
-          {/* Badge */}
-          <div
-            className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-[#C97C2A]/50 bg-[#C97C2A]/20 px-4 py-1.5 text-sm font-medium text-[#F2EDE4] backdrop-blur-sm"
-            style={{ animation: 'fadeUp 0.5s ease forwards', opacity: 0 }}
-          >
-            <span>⭐⭐⭐⭐⭐</span>
-            <span>100% anbefalt av alle kunder</span>
-          </div>
-
           {/* H1 */}
           <h1
             className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.08]"
@@ -86,6 +78,15 @@ export function Hero() {
           >
             Svarer innen 24 timer · Ingen forpliktelser
           </p>
+
+          {/* Badge */}
+          <div
+            className="mt-6 inline-flex items-center gap-1.5 rounded-full border border-[#C97C2A]/50 bg-[#C97C2A]/20 px-4 py-1.5 text-sm font-medium text-[#F2EDE4] backdrop-blur-sm"
+            style={{ animation: 'fadeUp 0.5s ease 0.5s forwards', opacity: 0 }}
+          >
+            <span>⭐⭐⭐⭐⭐</span>
+            <span>100% anbefalt av alle kunder</span>
+          </div>
         </div>
       </div>
     </section>
