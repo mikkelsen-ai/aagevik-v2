@@ -2,15 +2,18 @@ import { Phone, ArrowRight } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100dvh' }}>
       {/* Background image via CSS – full control over position on mobile */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/bilder/Bedre.webp?v=3)',
+          backgroundImage: 'url(/bilder/Bedre.webp?v=4)',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center top',
+          backgroundAttachment: 'scroll',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       >
         {/* Warm dark overlay */}
