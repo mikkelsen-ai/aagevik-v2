@@ -1,21 +1,31 @@
-import Image from 'next/image'
 import { Phone, ArrowRight } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ WebkitTransform: 'translateZ(0)' }}>
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/bilder/Bedre.webp"
-          alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          style={{ objectPosition: '85% 0%', transform: 'none' }}
-        />
-        {/* Warm dark overlay — charcoal-green, not cold blue */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image via CSS – full control over position on mobile */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/bilder/Bedre.webp)',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right top',
+        }}
+      >
+        <style>{`
+          @media (max-width: 639px) {
+            .hero-bg-inner {
+              background-position: 78% 5% !important;
+            }
+          }
+          @media (min-width: 640px) {
+            .hero-bg-inner {
+              background-position: right top !important;
+            }
+          }
+        `}</style>
+        {/* Warm dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE6] via-[#1E1A16]/55 to-transparent" />
       </div>
