@@ -7,11 +7,11 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bilder/aage-hovedbilde.jpeg"
-          alt="Åge Vik – tømrer i Bergen"
+          src="/bilder/Bedre.webp"
+          alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
           fill
           priority
-          className="object-cover object-[70%_20%] sm:object-center"
+          className="object-cover object-[60%_30%] sm:object-[70%_20%]"
           sizes="100vw"
           style={{ transform: 'none' }}
         />
