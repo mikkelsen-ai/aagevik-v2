@@ -6,13 +6,13 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bilder/Bedre.webp"
+          src="/bilder/aage-beskjaert.jpg"
           alt="Åge Vik – tømrer i arbeid med utsikt over norsk fjell"
           fill
           priority
           className="object-cover"
           sizes="100vw"
-          style={{ objectPosition: 'center top' }}
+          style={{ objectPosition: 'center 20%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1E1A16]/92 via-[#1E1A16]/75 to-[#1E1A16]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE6] via-[#1E1A16]/55 to-transparent" />
